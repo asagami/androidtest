@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button textreview;
     private Button buttonpanel;
+    private Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,((Button) findViewById(R.id.buttonPanel)).getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        next= (Button) findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this,nextActivity.class);
+                startActivity(intent);
             }
         });
     }
